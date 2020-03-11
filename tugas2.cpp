@@ -1,39 +1,38 @@
 #include <iostream>
-#include <iomanip>
-
+#include <conio.h>
 using namespace std;
 
-int main()
-{
-    string judul[100];
-    string penulis[100];
-    string tahun[100];
+int main(){
 
-    int x, z;
+	string judul[100];
+	string penulis[100];
+	string tahun[100];
+	int i,n;
 
-    system ("CLS");
-    cout << "Data Buku" << endl << endl;
-    
-    cout << "Jumlah buku yang akan diinput : ";
-    cin>> z;
-    cout<<"\x";
+	cout << "Masukkan jumlah buku yang ingin di input : ";
+	cin >> n;
+	cin.ignore(1, '\n');
 
-    for(x=0; x<z; x++){
-        cout<<"Buku ke- "<< x+1 <<endl;
-        cout<<"\nJudul buku : ";
-        getline(cin,judul[x]);
-        cout<<"Penulis : ";
-        getline(cin,penulis[x]);
-        cout<<"Tahun Terbit : ";
-        getline(cin,tahun[x]);
-		cout<< endl << endl;
-    }
-    cout<< "Tampilan Data Semua Buku";
-    for(x=0; x<z; x++){
-        cout<<"\nBuku ke- "<<x+1 << endl;
-        cout<<"\nJudul Buku : "<< judul[x] << endl;
-        cout<<"\nPenulis : "<< penulis[x] << endl;
-        cout<<"\nTahun Terbit : "<< tahun[x] << endl;
-    }
-return 0;
+	for (i=0; i<n; i++){
+		cout << "Buku " << i+1 << endl;
+		cout << "Judul Buku   : ";
+		getline(cin,judul[i]);
+		cout << "Penulis      : ";
+		getline(cin,penulis[i]);
+		cout << "Tahun Terbit : ";
+		getline(cin,tahun[i]);
+		cout << endl << endl;
+	}
+
+	cout << "Menampilkan semua Buku\n\n";
+
+	for (i=0; i<n; i++){
+		cout << "Buku " << i+1 << endl;
+		cout << "Judul Buku   : " << judul[i] << endl;
+		cout << "Penulis      : " << penulis[i] << endl;
+		cout << "Tahun Terbit : " << tahun[i] << endl << endl;
+	}
+
+	getch();
+	return 0;
 }
